@@ -8,38 +8,48 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 
 import useAuthStore from "@/store/authStore";
 import { useEffect, useState } from "react"; // Import useState
-import { ActivityIndicator, View, /* useEffect */ } from "react-native"; // Corrected import
+import { ActivityIndicator, Text, View } from "react-native"; // Corrected import
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const router = useRouter();
-  const { user, loading } = useAuthStore();
+  const { user, loading, error } = useAuthStore(); // Assuming your store has an error state
   const [isMounted, setIsMounted] = useState(false); // New state variable
-
-  const [loaded, error] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
+
+  const isLoading = loading || !fontsLoaded; // Combined loading state
 
   useEffect(() => {
     setIsMounted(true); // Set isMounted to true after the first render
   }, []);
 
   useEffect(() => {
-    if (isMounted && user === null) {
-      // Trigger navigation to onboarding when user is null and component is mounted
+    if (isMounted && user === null && !isLoading) {
+      // Trigger navigation to onboarding when user is null, component is mounted, and not loading
       router.replace('/(onboarding)');
     }
-  }, [user, router, isMounted]); // Add isMounted to the dependency array
+  }, [user, router, isMounted, isLoading]); // Add isLoading to the dependency array
 
-  if (!loaded) {
+  if (!fontsLoaded) {
     // Async font loading only occurs in development.
     return null;
   }
 
-  if (loading) {
+  if (isLoading) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
+
+  if (error) {
+    // Display an error message if there's an authentication error
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Authentication Error: {error}</Text>
       </View>
     );
   }

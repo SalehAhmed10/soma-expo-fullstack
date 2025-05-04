@@ -6,6 +6,7 @@ interface AuthState {
   user: any;
   token: string | null;
   loading: boolean;
+  error: any; // Add the error property here
   login: (user: any, token: string) => void;
   logout: () => Promise<void>; // Changed to Promise<void>
   setLoading: (loading: boolean) => void;
@@ -17,6 +18,7 @@ const useAuthStore = create<AuthState>()(
       user: null,
       token: null,
       loading: false,
+      error: null, // Initialize error to null
       login: (user, token) => set({ user, token, loading: false }),
       logout: async () => { // Made async
         console.log('Logging out. Current user:', useAuthStore.getState().user);
