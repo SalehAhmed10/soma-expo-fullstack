@@ -3,9 +3,27 @@ import { Link, router } from 'expo-router';
 import CustomText from '@/components/CustomText';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import useAuthStore from '@/store/authStore';
+import { useEffect, useState } from 'react';
+import { formatDate } from '@/utils/formatDate';
 
 
 export default function ProfileScreen() {
+    const { user } = useAuthStore();
+    const [fullName, setFullName] = useState('N/A');
+    const [joinedDate, setJoinedDate] = useState('N/A');
+    useEffect(() => {
+        if (user) {
+            setFullName(user.fullName || 'N/A');
+            // Assuming user object has a joinedDate property
+            if (user.createdAt) {
+                setJoinedDate(formatDate(user.createdAt));
+            } else {
+                setJoinedDate('N/A');
+            }
+        }
+    }, [user]);
+
     return (
         <ScrollView className="flex-1 bg-[#e8e1d9]">
             {/* Header */}
@@ -27,10 +45,10 @@ export default function ProfileScreen() {
                     className="w-24 h-24 rounded-full mb-4"
                 />
                 <CustomText className="text-xl font-semibold text-dark-brown mb-1">
-                    Sarah Johnson
+                    {fullName}
                 </CustomText>
                 <CustomText className="text-sm text-dark-brown opacity-60">
-                    Joined 20 July 2024
+                    Joined {joinedDate}
                 </CustomText>
             </View>
 

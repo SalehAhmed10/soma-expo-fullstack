@@ -1,6 +1,6 @@
 import CustomText from '@/components/CustomText';
 import useAuthStore from '@/store/authStore';
-import { Stack, useRouter } from 'expo-router';
+import { Link, Stack, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Pressable, ScrollView, TouchableOpacity, View } from 'react-native';
 
@@ -125,6 +125,14 @@ export default function AccountScreen() {
                     </View>
                 </View>
                 {/* Logout Button */}
+
+                <Link href="/(appscreen)/testapi/userprofile" asChild>
+                    <Pressable>
+                        <CustomText className="text-base text-dark-brown opacity-60">
+                            GO TO TESTPROFILE
+                        </CustomText>
+                    </Pressable>
+                </Link>
                 <TouchableOpacity
                     className=" h-[50px] bg-[#834518] rounded-full items-center justify-center mt-8 mx-6"
                     onPress={() => logout()}

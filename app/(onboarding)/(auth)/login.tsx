@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Link, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Alert, Image, SafeAreaView, ScrollView, TextInput, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -22,12 +23,15 @@ export default function LoginScreen() {
 
         setLoading(true);
         try {
-            const response = await axios.post('http://192.168.0.104:3000/api/somamobileapis/auth/login', {
+            const response = await axios.post('http://192.168.0.102:3000/api/somamobileapis/auth/login', {
                 email,
                 password,
             });
 
+            console.log(`Login response:`, response.data); // Log the response data
             if (response.data && response.data.user && response.data.token) {
+                // Store the token in AsyncStorage
+                await AsyncStorage.setItem('authToken', response.data.token);
                 login(response.data.user, response.data.token);
                 router.replace('/(tabs)/home');
             } else {
