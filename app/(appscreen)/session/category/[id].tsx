@@ -156,7 +156,7 @@ export default function CategoryDetailScreen() {
                     </View>
                 </View>
             </ScrollView>
-            <StatusBar barStyle="dark-content" />
+
         </SafeAreaView>
     );
 }

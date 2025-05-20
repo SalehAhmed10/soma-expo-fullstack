@@ -235,7 +235,7 @@ export default function PlaylistDetail() {
                 </View> */}
 
             </ScrollView>
-            <StatusBar barStyle={'dark-content'} />
+            {/* <StatusBar barStyle={'dark-content'} /> */}
         </>
     );
 }

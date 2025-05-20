@@ -2,7 +2,7 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_BASE_URL = 'http://192.168.0.102:3000/api/somamobileapis'; // Use your IP address or domain
+const API_BASE_URL = 'http://192.168.0.101:3000/api/somamobileapis'; // Use your IP address or domain
 
 const api = axios.create({
     baseURL: API_BASE_URL,

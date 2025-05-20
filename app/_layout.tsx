@@ -2,38 +2,38 @@
 // import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 // import { useFonts } from "expo-font";
 // import { Stack, useRouter } from "expo-router";
-// import { StatusBar } from 'expo-status-bar';
+
 
 // import "../index.css";
 
 // import useAuthStore from "@/store/authStore";
-// import { useEffect, useState } from "react"; // Import useState
-// import { ActivityIndicator, Text, View } from "react-native"; // Corrected import
+// import { useEffect, useState } from "react"; //
+// import { ActivityIndicator, StatusBar, Text, View } from "react-native"; //
 
 // export default function RootLayout() {
-//   // const colorScheme = useColorScheme(); // Remove this line
+
 //   const router = useRouter();
-//   const { user, loading, error } = useAuthStore(); // Assuming your store has an error state
-//   const [isMounted, setIsMounted] = useState(false); // New state variable
+//   const { user, loading, error } = useAuthStore();
+//   const [isMounted, setIsMounted] = useState(false);
 //   const [fontsLoaded, fontError] = useFonts({
 //     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
 //   });
 
-//   const isLoading = loading || !fontsLoaded; // Combined loading state
+//   const isLoading = loading || !fontsLoaded;
 
 //   useEffect(() => {
-//     setIsMounted(true); // Set isMounted to true after the first render
+//     setIsMounted(true);
 //   }, []);
 
 //   useEffect(() => {
 //     if (isMounted && user === null && !isLoading) {
-//       // Trigger navigation to onboarding when user is null, component is mounted, and not loading
+
 //       router.replace('/(onboarding)');
 //     }
-//   }, [user, router, isMounted, isLoading]); // Add isLoading to the dependency array
+//   }, [user, router, isMounted, isLoading]);
 
 //   if (!fontsLoaded) {
-//     // Async font loading only occurs in development.
+
 //     return null;
 //   }
 
@@ -46,7 +46,7 @@
 //   }
 
 //   if (error) {
-//     // Display an error message if there's an authentication error
+
 //     return (
 //       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
 //         <Text>Authentication Error: {error}</Text>
@@ -55,132 +55,55 @@
 //   }
 
 //   return (
-//     <ThemeProvider value={DefaultTheme}> {/* Use DefaultTheme directly */}
+//     <ThemeProvider value={DefaultTheme}>
 //       {user ? (
-//         <Stack key="tabs">
+//         <Stack key="tabs" screenOptions={{ headerShown: false }}>
 //           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 //           <Stack.Screen name="+not-found" />
 //         </Stack>
 //       ) : (
-//         <Stack key="onboarding">
+//         <Stack key="onboarding" screenOptions={{ headerShown: false }}>
 //           <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
 //         </Stack>
 //       )}
 
-//       <StatusBar style="dark" />  {/* Changed to 'dark' for better visibility */}
+//       <StatusBar barStyle={"dark-content"} />
 //     </ThemeProvider>
 //   );
 // }
 
-// filepath: c:\Dev-work\ClientProjects\mobile-app-projects\Soma-Project\GSTUDIO\download\soma-mobile-auth\app\_layout.tsx
-// import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
-// import { useFonts } from "expo-font";
-// import { Stack, useRouter } from "expo-router";
-// import { StatusBar } from 'expo-status-bar';
 
-// import "../index.css";
-
-// import useAuthStore from "@/store/authStore";
-// import { useEffect, useState } from "react"; // Import useState
-// import { ActivityIndicator, Text, View } from "react-native"; // Corrected import
-
-// export default function RootLayout() {
-//   // const colorScheme = useColorScheme(); // Remove this line
-//   const router = useRouter();
-//   const { user, loading, error } = useAuthStore(); // Assuming your store has an error state
-//   const [isMounted, setIsMounted] = useState(false); // New state variable
-//   const [fontsLoaded, fontError] = useFonts({
-//     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-//   });
-
-//   const isLoading = loading || !fontsLoaded; // Combined loading state
-
-//   useEffect(() => {
-//     setIsMounted(true); // Set isMounted to true after the first render
-//   }, []);
-
-//   useEffect(() => {
-//     if (isMounted && user === null && !isLoading) {
-//       // Trigger navigation to onboarding when user is null, component is mounted, and not loading
-//       router.replace('/(onboarding)');
-//     }
-//   }, [user, router, isMounted, isLoading]); // Add isLoading to the dependency array
-
-//   if (!fontsLoaded) {
-//     // Async font loading only occurs in development.
-//     return null;
-//   }
-
-//   if (isLoading) {
-//     return (
-//       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-//         <ActivityIndicator size="large" color="#0000ff" />
-//       </View>
-//     );
-//   }
-
-//   if (error) {
-//     // Display an error message if there's an authentication error
-//     return (
-//       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-//         <Text>Authentication Error: {error}</Text>
-//       </View>
-//     );
-//   }
-
-//   return (
-//     <ThemeProvider value={DefaultTheme}> {/* Use DefaultTheme directly */}
-//       {user ? (
-//         <Stack key="tabs">
-//           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-//           <Stack.Screen name="+not-found" />
-//         </Stack>
-//       ) : (
-//         <Stack key="onboarding">
-//           <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
-//         </Stack>
-//       )}
-
-//       <StatusBar style="dark" />  {/* Changed to 'dark' for better visibility */}
-//     </ThemeProvider>
-//   );
-// }
 
 import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack, useRouter } from "expo-router";
-import { StatusBar } from 'expo-status-bar';
-
 import "../index.css";
-
 import useAuthStore from "@/store/authStore";
-import { useEffect, useState } from "react"; // Import useState
-import { ActivityIndicator, Text, View } from "react-native"; // Corrected import
+import { useEffect, useState } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 export default function RootLayout() {
-  // const colorScheme = useColorScheme(); // Remove this line
   const router = useRouter();
-  const { user, loading, error } = useAuthStore(); // Assuming your store has an error state
-  const [isMounted, setIsMounted] = useState(false); // New state variable
+  const { user, loading, error } = useAuthStore();
+  const [isMounted, setIsMounted] = useState(false);
   const [fontsLoaded, fontError] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
 
-  const isLoading = loading || !fontsLoaded; // Combined loading state
+  const isLoading = loading || !fontsLoaded;
 
   useEffect(() => {
-    setIsMounted(true); // Set isMounted to true after the first render
+    setIsMounted(true);
   }, []);
 
   useEffect(() => {
     if (isMounted && user === null && !isLoading) {
-      // Trigger navigation to onboarding when user is null, component is mounted, and not loading
       router.replace('/(onboarding)');
     }
-  }, [user, router, isMounted, isLoading]); // Add isLoading to the dependency array
+  }, [user, router, isMounted, isLoading]);
 
   if (!fontsLoaded) {
-    // Async font loading only occurs in development.
     return null;
   }
 
@@ -193,7 +116,6 @@ export default function RootLayout() {
   }
 
   if (error) {
-    // Display an error message if there's an authentication error
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text>Authentication Error: {error}</Text>
@@ -202,7 +124,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={DefaultTheme}> {/* Use DefaultTheme directly */}
+    <ThemeProvider value={DefaultTheme}>
       {user ? (
         <Stack key="tabs" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -213,8 +135,12 @@ export default function RootLayout() {
           <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
         </Stack>
       )}
+      <StatusBar
+        translucent={true}
 
-      <StatusBar style="dark" />  {/* Changed to 'dark' for better visibility */}
+        style="dark"
+
+      />
     </ThemeProvider>
   );
 }

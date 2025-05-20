@@ -88,12 +88,12 @@ export default function PlaylistsScreen() {
 
     const handlePlaylistPress = (playlist: PlaylistItem) => {
         router.push({
-            pathname: '/playlist/[id]',
+            pathname: '/playlist/track/[id]',
             params: {
                 id: playlist.id,
                 name: playlist.name,
                 description: playlist.description,
-                image: playlist.image
+                image: playlist.image // This works if image is a require() or a string URL
             }
         });
     };

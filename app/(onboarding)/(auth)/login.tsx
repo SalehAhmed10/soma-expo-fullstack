@@ -23,7 +23,7 @@ export default function LoginScreen() {
 
         setLoading(true);
         try {
-            const response = await axios.post('http://192.168.0.102:3000/api/somamobileapis/auth/login', {
+            const response = await axios.post('http://192.168.0.101:3000/api/somamobileapis/auth/login', {
                 email,
                 password,
             });

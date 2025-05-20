@@ -12,7 +12,7 @@ export default function AddMatScreen() {
 
     const handleMatSelection = () => {
         setIsDiscovering(true);
-        // Simulate discovery process for 3 seconds
+
         setTimeout(() => {
             setIsDiscovering(false);
             setIsPaired(true);
@@ -22,7 +22,7 @@ export default function AddMatScreen() {
     return (
         <SafeAreaView className="flex-1 bg-screen-bg">
             <ScrollView className="flex-1">
-                {/* Header Section */}
+
                 <View>
                     <View className="flex flex-row justify-between items-center px-6 pt-12 mt-8">
                         <CustomText className="text-base font-bold text-dark-brown">

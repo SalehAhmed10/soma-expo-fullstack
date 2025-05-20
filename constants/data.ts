@@ -316,3 +316,69 @@ const subCategories: SubCategory[] = [
 ];
 
 export { sessionsData, soundProfiles, categories, subCategories };
+
+
+interface PlaylistItem {
+  id: number;
+  name: string;
+  description?: string;
+  image?: any;
+}
+interface Category {
+  id: number;
+  name: string;
+  playlists: PlaylistItem[];
+}
+
+export const playlistCategories: Category[] = [
+  {
+    id: 1,
+    name: "Soma Sounds",
+    playlists: [
+      { id: 1, name: "Relax", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+      { id: 2, name: "energise", description: "Relax and unwind", image: require('@/assets/images/soma/playlistimages/playlisttabcontent2.png') },
+      { id: 3, name: "Sleep", description: "Late night tunes", image: require('@/assets/images/soma/playlistimages/playlisttabcontent3.png') },
+      { id: 4, name: "Focus", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+
+    ]
+  },
+  {
+    id: 2,
+    name: "Exclusive Release",
+    // randomize 
+    playlists: [
+
+      { id: 1, name: "Sleep", description: "Late night tunes", image: require('@/assets/images/soma/playlistimages/playlisttabcontent3.png') },
+      { id: 2, name: "Focus", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+      { id: 3, name: "Relax", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+      { id: 4, name: "energise", description: "Relax and unwind", image: require('@/assets/images/soma/playlistimages/playlisttabcontent2.png') },
+    ]
+  },
+
+  {
+    id: 3,
+    name: "Soma Playlists",
+    // randomize change order of list 
+    playlists: [
+      { id: 1, name: "Focus", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+      { id: 2, name: "Relax", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+      { id: 3, name: "Sleep", description: "Late night tunes", image: require('@/assets/images/soma/playlistimages/playlisttabcontent3.png') },
+      { id: 4, name: "energise", description: "Relax and unwind", image: require('@/assets/images/soma/playlistimages/playlisttabcontent2.png') },
+    ]
+
+  },
+  {
+    id: 4,
+    name: "Morning Playlists",
+    // randomize change order of list
+    playlists: [
+      { id: 1, name: "Sleep", description: "Late night tunes", image: require('@/assets/images/soma/playlistimages/playlisttabcontent3.png') },
+      { id: 2, name: "Focus", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+      { id: 3, name: "Relax", description: "Start your day right", image: require('@/assets/images/soma/playlistimages/playlisttabcontent1.png') },
+      { id: 4, name: "energise", description: "Relax and unwind", image: require('@/assets/images/soma/playlistimages/playlisttabcontent2.png') },
+    ]
+
+  }
+
+
+];

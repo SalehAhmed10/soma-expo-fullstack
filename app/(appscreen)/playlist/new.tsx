@@ -1,5 +1,5 @@
 import { View, TouchableOpacity, TextInput, SafeAreaView } from 'react-native';
-import { router } from 'expo-router';
+import { Link, router } from 'expo-router';
 import CustomText from '@/components/CustomText';
 import { AntDesign } from '@expo/vector-icons';
 import { useState } from 'react';
@@ -47,10 +47,17 @@ export default function NewPlaylist() {
                         });
                     }}
                 >
+
                     <CustomText className="text-white text-base">
                         Create
                     </CustomText>
                 </TouchableOpacity>
+
+                <Link href="/(appscreen)/testtracks/trackplayer" asChild>
+                    <CustomText className="text-base text-dark-brown mt-4 underline">
+                        TEST TRACK PLAYER
+                    </CustomText>
+                </Link>
             </View>
         </SafeAreaView>
     );
