@@ -137,10 +137,9 @@ export default function RootLayout() {
       )}
       <StatusBar
         translucent={true}
-
         style="dark"
-
       />
+
     </ThemeProvider>
   );
 }

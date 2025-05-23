@@ -120,7 +120,7 @@ export default function PlaylistsScreen() {
 
     return (
         <View className="flex-1 bg-screen-bg">
-            <StatusBar style="light" />
+
 
             {/* Header Section */}
             <View className="h-[250px]">

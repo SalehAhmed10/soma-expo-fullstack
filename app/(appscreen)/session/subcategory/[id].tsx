@@ -185,7 +185,7 @@ export default function SubCategoryDetailScreen() {
     if (isLoading) {
         return (
             <SafeAreaView className="flex-1 bg-screen-bg-dark">
-                <StatusBar barStyle="light-content" />
+
                 <View className="flex-1 justify-center items-center">
                     <ActivityIndicator size="large" color="#E8E1D9" />
                     <CustomText className="text-[#E8E1D9] mt-4">Loading subcategory...</CustomText>
@@ -197,7 +197,7 @@ export default function SubCategoryDetailScreen() {
     if (error) {
         return (
             <SafeAreaView className="flex-1 bg-screen-bg-dark">
-                <StatusBar barStyle="light-content" />
+
                 <View className="flex-1 justify-center items-center px-6">
                     <CustomText className="text-red-500 text-center mb-4">{error}</CustomText>
                     <TouchableOpacity
@@ -214,7 +214,7 @@ export default function SubCategoryDetailScreen() {
     if (!subcategoryData) {
         return (
             <SafeAreaView className="flex-1 bg-screen-bg-dark">
-                <StatusBar barStyle="light-content" />
+
                 <View className="flex-1 justify-center items-center">
                     <CustomText className="text-[#E8E1D9]">Subcategory not found</CustomText>
                 </View>
@@ -224,7 +224,7 @@ export default function SubCategoryDetailScreen() {
 
     return (
         <SafeAreaView className="flex-1 bg-screen-bg-dark">
-            <StatusBar barStyle="light-content" />
+
             <ScrollView className="flex-1">
                 {/* Header */}
                 <View>

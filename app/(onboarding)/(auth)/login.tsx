@@ -7,6 +7,7 @@ import { Link, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Alert, Image, SafeAreaView, ScrollView, TextInput, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
+import api from '@/utils/api';
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -23,7 +24,8 @@ export default function LoginScreen() {
 
         setLoading(true);
         try {
-            const response = await axios.post('http://192.168.0.101:3000/api/somamobileapis/auth/login', {
+            // Use the shared API instance
+            const response = await api.post('/auth/login', {
                 email,
                 password,
             });
@@ -39,7 +41,7 @@ export default function LoginScreen() {
             }
         } catch (error: any) {
             console.error('Login error:', error);
-            Alert.alert('Login Failed', error.response?.data || 'An error occurred during login.');
+            Alert.alert('Login Failed', error.response?.data?.message || error.response?.data || 'An error occurred during login.');
         } finally {
             setLoading(false);
         }

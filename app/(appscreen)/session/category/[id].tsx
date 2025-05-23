@@ -453,7 +453,7 @@ export default function CategoryDetailScreen() {
 
     return (
         <SafeAreaView className="flex-1 bg-screen-bg-dark">
-            <StatusBar barStyle="light-content" />
+
             <ScrollView className="flex-1">
                 {/* Header Section */}
                 <View>
@@ -531,6 +531,8 @@ export default function CategoryDetailScreen() {
                     {renderSubcategoriesContent()}
                 </View>
             </ScrollView>
+
+
         </SafeAreaView>
     );
 }

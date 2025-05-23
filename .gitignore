@@ -37,3 +37,22 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+.env
+/android/build/
+/android/app/build/
+/android/app/src/main/assets/app.manifest
+/android/app/src/main/assets/main.jsbundle
+/android/app/src/main/assets/index.android.bundle
+/android/app/src/main/assets/metadata.json
+/android/.gradle/
+/android/app/*.apk
+/android/app/*.aab
+/android/local.properties
+
+# Gradle cache (if it appears at the root)
+.gradle/
+
+# IntelliJ IDEA files (if you use it)
+.idea/
+*.iml

@@ -224,7 +224,7 @@
 //     if (loading) {
 //         return (
 //             <SafeAreaView className="flex-1 bg-screen-bg">
-//                 <StatusBar barStyle="dark-content" />
+//                 
 //                 <View className="flex-1 justify-center items-center">
 //                     <ActivityIndicator size="large" color="#31170C" />
 //                     <CustomText className="text-dark-brown mt-4">Loading session...</CustomText>
@@ -237,7 +237,7 @@
 //     if (error) {
 //         return (
 //             <SafeAreaView className="flex-1 bg-screen-bg">
-//                 <StatusBar barStyle="dark-content" />
+//                 
 //                 <View className="flex-1 justify-center items-center px-6">
 //                     <CustomText className="text-red-500 text-center mb-4">{error}</CustomText>
 //                     <CustomButton
@@ -255,7 +255,7 @@
 //     if (!session) {
 //         return (
 //             <SafeAreaView className="flex-1 bg-screen-bg">
-//                 <StatusBar barStyle="dark-content" />
+//                 
 //                 <View className="flex-1 justify-center items-center px-6">
 //                     <CustomText className="text-dark-brown text-center mb-4">Session not found</CustomText>
 //                     <CustomButton
@@ -315,7 +315,7 @@
 
 //     return (
 //         <SafeAreaView className="flex-1 bg-screen-bg">
-//             <StatusBar barStyle="dark-content" />
+//             
 //             <ScrollView className="flex-1" contentContainerStyle={{ paddingBottom: 120 }}>
 //                 {/* Header Image */}
 //                 <View className="relative">
@@ -541,7 +541,7 @@ export default function SessionDetailScreen() {
     if (loading) {
         return (
             <SafeAreaView className="flex-1 bg-screen-bg">
-                <StatusBar barStyle="dark-content" />
+
                 <View className="flex-1 justify-center items-center">
                     <ActivityIndicator size="large" color="#31170C" />
                     <CustomText className="text-dark-brown mt-4">Loading session...</CustomText>
@@ -554,7 +554,7 @@ export default function SessionDetailScreen() {
     if (error) {
         return (
             <SafeAreaView className="flex-1 bg-screen-bg">
-                <StatusBar barStyle="dark-content" />
+
                 <View className="flex-1 justify-center items-center px-6">
                     <CustomText className="text-red-500 text-center mb-4">{error}</CustomText>
                     <CustomButton
@@ -572,7 +572,7 @@ export default function SessionDetailScreen() {
     if (!session) {
         return (
             <SafeAreaView className="flex-1 bg-screen-bg">
-                <StatusBar barStyle="dark-content" />
+
                 <View className="flex-1 justify-center items-center px-6">
                     <CustomText className="text-dark-brown text-center mb-4">Session not found</CustomText>
                     <CustomButton
@@ -668,7 +668,7 @@ export default function SessionDetailScreen() {
 
     return (
         <SafeAreaView className="flex-1 bg-screen-bg">
-            <StatusBar barStyle="dark-content" />
+
             <ScrollView className="flex-1">
                 {/* Header Image */}
                 <View className="relative">
