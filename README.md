@@ -1,22 +1,40 @@
-5. Additional Optimization Tips
-Server-side Image Processing:
+# Soma Mobile Auth
 
-Talk to your backend team about generating optimized thumbnails (around 200KB max)
-Consider using responsive images with srcSet equivalents for different screen sizes
-Lazy Loading and Code Splitting:
+A React Native mobile application built with Expo for audio/video content management.
 
-Only load playlists when a user scrolls to that section
-Consider adding pagination to lists with many items
-Network Layer Optimization:
+## Features
+- User authentication (email/password, social login preparation)
+- Live session browsing and joining
+- Playlist creation and management
+- Session categorization
+- Audio/video playback
+- User profile management
 
-Add caching to your API requests
-Implement a stale-while-revalidate pattern for content
-Device Storage Management:
+## Tech Stack
+- React Native with Expo
+- TypeScript
+- Zustand for state management
+- Expo Router for navigation
+- NativeWind for styling
+- Axios for API communication
 
-Clear image cache periodically using expo-file-system
-Track cache size and implement user controls for clearing it
-Performance Monitoring:
+## Prerequisites
+- Node.js 18+
+- Expo CLI
+- Android Studio (for Android development)
+- Xcode (for iOS development - Mac required)
 
-Add metrics to track load times and interactions
-Consider using Flipper or other performance tools for debugging
-These changes will make your app significantly more performant and maintainable while reducing the bandwidth usage for your users.
+## Installation
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npx expo start`
+
+## Building
+- Android: `npx expo build:android` or `eas build --platform android`
+- iOS: `npx expo build:ios` or `eas build --platform ios` (requires Mac)
+
+## API Configuration
+- Development: `http://localhost:3000/api/somamobileapis`
+- Production: `https://soma-nextjs.vercel.app/api/somamobileapis`
+
+## Project Structure
